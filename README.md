@@ -10,7 +10,9 @@ my-agent-skills/
 ├── README.md
 ├── skills/
 │   ├── git-conventions/   # Git workflow & commit conventions
-│   └── code-review/       # Code review guidelines
+│   ├── code-review/      # Code review guidelines
+│   ├── debugging/       # Debugging techniques
+│   ├── refactoring/     # Refactoring patterns
 │   └── ...
 └── docs/                  # Supporting documentation
 ```
@@ -31,6 +33,8 @@ This creates a symlink at `~/.config/opencode/skills/my-agent-skills` pointing t
 |-------|-------------|
 | `git-conventions` | Enforce consistent git workflow - commits, branches, PRs following conventional commits |
 | `code-review` | Guidelines for conducting effective code reviews - checklists, feedback best practices |
+| `debugging` | Systematic debugging techniques - logging, error tracking, tools and methodologies |
+| `refactoring` | Safe refactoring patterns - code smells, techniques, tech debt management |
 
 ## Adding New Skills
 
