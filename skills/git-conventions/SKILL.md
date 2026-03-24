@@ -143,3 +143,4 @@ git push --force-with-lease
 2. **Merge commits**: Avoid unless required for merge conflicts
 3. **Force push**: Never force push to shared branches
 4. **Commit after push**: Use `--amend` only for unpushed commits
+5. **Commit style**: follow conventional commit practice, make small logical commits
