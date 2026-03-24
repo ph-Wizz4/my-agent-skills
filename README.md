@@ -6,7 +6,7 @@ A general user-level agent skills repository for Software Development, following
 
 ```
 my-agent-skills/
-├── setup-symlink.sh       # Setup script to link skills globally
+├── setup.sh       # Setup script to link skills globally
 ├── README.md
 ├── skills/
 │   ├── git-conventions/   # Git workflow & commit conventions
@@ -22,7 +22,7 @@ my-agent-skills/
 Run the setup script to link skills globally to OpenCode:
 
 ```bash
-./setup-symlink.sh
+./setup.sh
 ```
 
 This creates a symlink at `~/.config/opencode/skills/my-agent-skills` pointing to the `skills/` directory.
