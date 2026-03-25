@@ -52,6 +52,7 @@ Use this skill when:
 3. **Suggest solutions**: Offer code examples when possible
 4. **Praise good code**: Acknowledge well-written code
 5. **Focus on the code**: Critique the code, not the person
+6. **Warning Performance**: Alert protential performance issue, suggest fixing options in the future
 
 ### Don't
 

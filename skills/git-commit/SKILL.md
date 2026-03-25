@@ -1,26 +1,26 @@
 ---
-name: git-conventions
-description: Enforce consistent git workflow - commits, branches, PRs following conventional commits
+name: git-commit
+description: Git commit workflow - branch management and commit conventions
 ---
 
 ## When to use
 
-Use this skill when working with version control tasks:
-- Writing commit messages
+Use this skill when working with:
 - Creating or managing branches
-- Preparing pull requests
-- Merging or rebasing
+- Writing commit messages
+- Committing changes
+- Rebasing or amending commits
 
 ## Branch Management
 
-### Branch creation 
+### Always Work on Feature Branch
 
-Always work on feature branch.
-1. `main` and `staging` are always considered as non feature branch
-2. base and pull non feature branch first (default: `main`) 
-3. then branch off to new feature branch, if a new feature is being implemented
- 
-### Naming 
+1. `main` and `staging` are always considered non-feature branches
+2. If you are NOT on a feature branch (i.e., on main/staging), ask the user:
+   - **"Which branch are you merging from and to?"**
+3. After confirming merge direction, create a new feature branch off the target branch
+
+### Branch Naming
 
 Format: `<project-prefix>-<ticket-id>-<type>-<short-description>`
 
@@ -28,7 +28,7 @@ Types:
 - `feat` - New features
 - `refactor` - Refactor code, but no feature changes
 - `fix` - Bug fixes
-- `chore` - Maintenance, remove redunancy
+- `chore` - Maintenance, remove redundancy
 - `docs` - Documentation
 - `test` - Tests
 
@@ -101,45 +101,24 @@ Fixes #123
 chore: update dependencies
 ```
 
-## Pull Request Guidelines
-
-### Title
-
-Use same format as commit messages:
-```
-feat(auth): add OAuth2 login support
-```
-
-### Description Template
-
-```markdown
-## Summary
-Brief description of changes
-
-## Changes
-- Added OAuth2 service
-- Updated login redirect logic
-
-## Testing
-- [ ] Unit tests added
-- [ ] Manual testing completed
-
-## Screenshots (if UI)
-```
-
-### Checklist
-
-- [ ] Branch is up-to-date with target
-- [ ] Commits follow conventional format
-- [ ] PR description is complete
-- [ ] Tests pass
-- [ ] No merge conflicts
-
 ## Common Commands
 
 ```bash
 # Create and switch to new branch
-git checkout -b feat/123-add-feature
+git checkout -b ABC-123-feat-add-feature
+
+# Check current branch
+git branch --show-current
+
+# Stage changes
+git add <file>
+git add .
+
+# Commit with message
+git commit -m "feat(auth): add OAuth2 login"
+
+# Amend last commit (only if not pushed)
+git commit --amend
 
 # Interactive rebase to clean up commits
 git rebase -i main
@@ -147,11 +126,12 @@ git rebase -i main
 # Squash last N commits
 git rebase -i HEAD~N
 
-# Amend last commit
-git commit --amend
-
 # Force push (use with caution)
 git push --force-with-lease
+
+# Fetch and rebase onto latest
+git fetch origin
+git rebase origin/main
 ```
 
 ## Edge Cases
@@ -160,3 +140,4 @@ git push --force-with-lease
 2. **Merge commits**: Avoid unless required for merge conflicts
 3. **Force push**: Never force push to shared branches
 4. **Commit after push**: Use `--amend` only for unpushed commits
+5. **Detached HEAD**: Always checkout a branch before committing
