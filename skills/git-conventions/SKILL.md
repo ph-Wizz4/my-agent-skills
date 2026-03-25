@@ -11,27 +11,44 @@ Use this skill when working with version control tasks:
 - Preparing pull requests
 - Merging or rebasing
 
-## Branch Naming
+## Branch Management
 
-Format: `<type>/<ticket-id>-<short-description>`
+### Branch creation 
+
+Always work on feature branch.
+1. `main` and `staging` are always considered as non feature branch
+2. base and pull non feature branch first (default: `main`) 
+3. then branch off to new feature branch, if a new feature is being implemented
+ 
+### Naming 
+
+Format: `<project-prefix>-<ticket-id>-<type>-<short-description>`
 
 Types:
 - `feat` - New features
+- `refactor` - Refactor code, but no feature changes
 - `fix` - Bug fixes
-- `chore` - Maintenance, refactoring
+- `chore` - Maintenance, remove redunancy
 - `docs` - Documentation
 - `test` - Tests
 
 Examples:
 ```
-feat/123-add-user-auth
-fix/456-login-redirect
-docs/789-update-readme
+ABC-123-feat-add-user-auth
+ABC-456-fix-login-redirect
+ABC-789-docs-update-readme
+ABC-101-refactor-remove-duplicate-code
+ABC-202-chore-update-dependencies
+ABC-303-test-add-unit-tests
+XYZ-001-feat-implement-search
+XYZ-002-fix-resolve-memory-leak
 ```
 
 ## Commit Messages
 
 Follow [Conventional Commits](https://www.conventionalcommits.org/):
+
+Make small logical commits
 
 ```
 <type>(<scope>): <description>
@@ -143,4 +160,3 @@ git push --force-with-lease
 2. **Merge commits**: Avoid unless required for merge conflicts
 3. **Force push**: Never force push to shared branches
 4. **Commit after push**: Use `--amend` only for unpushed commits
-5. **Commit style**: follow conventional commit practice, make small logical commits
