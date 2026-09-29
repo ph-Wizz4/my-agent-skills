@@ -27,6 +27,21 @@ Run the setup script to link skills globally to OpenCode:
 
 This creates a symlink at `~/.config/opencode/skills/my-agent-skills` pointing to the `skills/` directory.
 
+## Branch and PR Naming
+
+Use this format for branch names and pull request titles:
+
+```
+<project-prefix>-<ticket-id>-<type>-<short-description>
+```
+
+Project prefix for this repository: `MAS`
+
+Examples:
+- `MAS-123-feat-add-user-auth`
+- `MAS-124-fix-login-redirect`
+- `MAS-125-chore-update-skill-docs`
+
 ## Available Skills
 
 | Skill | Description |
