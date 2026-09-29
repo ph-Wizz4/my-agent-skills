@@ -51,6 +51,14 @@ Brief description of changes
 - [ ] Tests pass
 - [ ] No merge conflicts
 - [ ] PR title matches branch name format
+- [ ] No protected branch policy violations
+
+## Safety Guardrails
+
+- Do not merge your own PR unless the repository policy explicitly allows it
+- Do not bypass required checks or review requirements
+- Treat force push as a feature-branch-only operation
+- If branch protection, merge strategy, or ownership is unclear, confirm before merging
 
 ## Common Commands
 
@@ -81,6 +89,9 @@ gh pr checks <pr-number>
 # Merge PR
 gh pr merge <pr-number> --squash
 
+# Merge PR after checks and approvals
+gh pr merge <pr-number> --squash --delete-branch
+
 # Checkout PR locally
 gh pr checkout <pr-number>
 ```
@@ -90,3 +101,4 @@ gh pr checkout <pr-number>
 1. **Merge conflicts**: Resolve conflicts locally, rebase onto target branch, force push to feature branch
 2. **Outdated PR**: Rebase or merge target branch into feature branch
 3. **Draft PR**: Use `--draft` flag for work-in-progress PRs
+4. **Required checks failing**: Fix locally, push updates, and re-run `gh pr checks <pr-number>`
