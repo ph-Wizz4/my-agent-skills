@@ -13,6 +13,7 @@ my-agent-skills/
 │   ├── git-commit/     # Git workflow and commit conventions
 │   ├── gh-pr/          # Pull request workflow using GitHub CLI
 │   ├── code-review/    # Code review guidelines
+│   ├── initiative/     # Intent refinement, acceptance criteria, and task tracking
 │   ├── debugging/      # Delegates to project-specific debug skill
 │   └── refactoring/    # Delegates to project-specific refactoring skill
 ```
@@ -49,6 +50,7 @@ Examples:
 | `git-commit` | Git commit workflow - branch management and commit conventions |
 | `gh-pr` | GitHub Pull Request workflow - creating, reviewing, and managing PRs |
 | `code-review` | Guidelines for conducting effective code reviews - checklists, feedback best practices |
+| `initiative` | Refine project intent into verifiable acceptance criteria and a tracked todo list |
 | `debugging` | Debugging skill that checks for project-specific debugging configurations |
 | `refactoring` | Refactoring skill that checks for project-specific refactoring conventions |
 
