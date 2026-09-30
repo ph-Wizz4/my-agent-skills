@@ -6,15 +6,15 @@ A general user-level agent skills repository for Software Development, following
 
 ```
 my-agent-skills/
-├── setup.sh       # Setup script to link skills globally
+├── setup.sh        # Setup script to link skills globally
 ├── README.md
+├── LICENSE
 ├── skills/
-│   ├── git-conventions/   # Git workflow & commit conventions
-│   ├── code-review/      # Code review guidelines
-│   ├── debugging/       # Debugging techniques
-│   ├── refactoring/     # Refactoring patterns
-│   └── ...
-└── docs/                  # Supporting documentation
+│   ├── git-commit/     # Git workflow and commit conventions
+│   ├── gh-pr/          # Pull request workflow using GitHub CLI
+│   ├── code-review/    # Code review guidelines
+│   ├── debugging/      # Delegates to project-specific debug skill
+│   └── refactoring/    # Delegates to project-specific refactoring skill
 ```
 
 ## Setup
@@ -27,14 +27,30 @@ Run the setup script to link skills globally to OpenCode:
 
 This creates a symlink at `~/.config/opencode/skills/my-agent-skills` pointing to the `skills/` directory.
 
+## Branch and PR Naming
+
+Use this format for branch names and pull request titles:
+
+```
+<project-prefix>-<ticket-id>-<type>-<short-description>
+```
+
+Project prefix for this repository: `MAS`
+
+Examples:
+- `MAS-123-feat-add-user-auth`
+- `MAS-124-fix-login-redirect`
+- `MAS-125-chore-update-skill-docs`
+
 ## Available Skills
 
 | Skill | Description |
 |-------|-------------|
-| `git-conventions` | Enforce consistent git workflow - commits, branches, PRs following conventional commits |
+| `git-commit` | Git commit workflow - branch management and commit conventions |
+| `gh-pr` | GitHub Pull Request workflow - creating, reviewing, and managing PRs |
 | `code-review` | Guidelines for conducting effective code reviews - checklists, feedback best practices |
-| `debugging` | Systematic debugging techniques - logging, error tracking, tools and methodologies |
-| `refactoring` | Safe refactoring patterns - code smells, techniques, tech debt management |
+| `debugging` | Debugging skill that checks for project-specific debugging configurations |
+| `refactoring` | Refactoring skill that checks for project-specific refactoring conventions |
 
 ## Adding New Skills
 
@@ -57,4 +73,4 @@ Follow the [OpenCode skill format](https://opencode.ai/docs/skills/) for the res
 
 ## License
 
-MIT
+Apache-2.0
