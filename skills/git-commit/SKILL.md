@@ -17,8 +17,16 @@ Use this skill when working with:
 
 1. `main` and `staging` are always considered non-feature branches
 2. If you are NOT on a feature branch (i.e., on main/staging), ask the user:
-   - **"Which branch are you merging from and to?"**
+    - **"Which branch are you merging from and to?"**
 3. After confirming merge direction, create a new feature branch off the target branch
+4. Never commit directly to `main`, `master`, `staging`, or other protected/shared branches unless the user explicitly requires it
+
+### Safety Guardrails
+
+- Treat rebases, history rewrites, and force pushes as high-risk operations
+- Before rewriting history, verify the branch is a private feature branch
+- If there is any doubt about branch ownership, ask before proceeding
+- Never run force push on protected/shared branches
 
 ### Branch Naming
 
@@ -132,12 +140,15 @@ git push --force-with-lease
 # Fetch and rebase onto latest
 git fetch origin
 git rebase origin/main
+
+# Safer push for feature branches
+git push -u origin <feature-branch>
 ```
 
 ## Edge Cases
 
 1. **Squash vs rebase**: Prefer rebase for maintaining clean history on feature branches
 2. **Merge commits**: Avoid unless required for merge conflicts
-3. **Force push**: Never force push to shared branches
+3. **Force push**: Use only on your own feature branch and prefer `--force-with-lease`
 4. **Commit after push**: Use `--amend` only for unpushed commits
 5. **Detached HEAD**: Always checkout a branch before committing
