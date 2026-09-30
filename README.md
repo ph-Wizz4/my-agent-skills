@@ -14,6 +14,8 @@ my-agent-skills/
 │   ├── gh-pr/          # Pull request workflow using GitHub CLI
 │   ├── code-review/    # Code review guidelines
 │   ├── initiative/     # Intent refinement, acceptance criteria, and task tracking
+│   ├── plan-test/      # Test scope, test levels, and data preparation planning
+│   ├── create-test/    # Test implementation and verification from an agreed plan
 │   ├── debugging/      # Delegates to project-specific debug skill
 │   └── refactoring/    # Delegates to project-specific refactoring skill
 ```
@@ -51,8 +53,16 @@ Examples:
 | `gh-pr` | GitHub Pull Request workflow - creating, reviewing, and managing PRs |
 | `code-review` | Guidelines for conducting effective code reviews - checklists, feedback best practices |
 | `initiative` | Refine project intent into verifiable acceptance criteria and a tracked todo list |
+| `plan-test` | Confirm test coverage, unit versus API E2E testing, and data preparation; produce a test plan |
+| `create-test` | Implement an agreed test plan using project conventions and report verification results |
 | `debugging` | Debugging skill that checks for project-specific debugging configurations |
 | `refactoring` | Refactoring skill that checks for project-specific refactoring conventions |
+
+### Test Planning and Implementation
+
+Use `plan-test` to agree on happy-case or edge-case coverage, decide whether unit tests or API-based E2E tests are needed, and specify test data and mocks. It produces a plan without writing or running tests.
+
+Use `create-test` to implement the agreed scenarios, prepare data and mocks, and run the relevant checks. It reuses decisions from the conversation or a supplied plan and resolves missing decisions through `plan-test` before implementation.
 
 ## Adding New Skills
 
