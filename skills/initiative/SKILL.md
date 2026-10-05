@@ -82,3 +82,4 @@ Use this structure, omitting empty sections. Keep the todo tool as the live trac
 | T-1 | <Concrete implementation step> | AC-1 | pending | None |
 | T-2 | <Verify the expected outcome> | AC-1 | pending | T-1 |
 ```
+During  implementation, avoid using comments .
