@@ -10,6 +10,7 @@ Use this skill when working with:
 - Writing commit messages
 - Committing changes
 - Rebasing or amending commits
+- after user confirmation
 
 ## Branch Management
 
@@ -84,6 +85,7 @@ Make small logical commits
 - Subject line: max 50 characters
 - Body: wrap at 72 characters
 - Footer: reference issues `Closes #123`
+- Scope: make small reviewable commits
 
 ### Examples
 
